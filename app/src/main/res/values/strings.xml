@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">newversion</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="register">Register</string>
+    <string name="login">login</string>
+    <string name="Welcome_to_newversion_app">\nWelcom_to_newversion_app</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+    <string name="lastname">LastName</string>
+    <string name="full_name">Full Name</string>
+    <string name="send">Send</string>
+    <string name="amount">Amount</string>
+    <string name="enter_amount">Enter Amount:</string>
+    <string name="iban">IBAN</string>
+    <string name="enter_your_iban">Enter Your IBAN:</string>
+    <string name="enter_your_last_name">Enter Your Last Name:</string>
+    <string name="last_name">Last Name</string>
+    <string-array name="currency_options">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>LBP</item>
+    </string-array>
+    <string name="title_activity_payment_success">PaymentSuccess</string>
+    <string name="payment_success">Payment Success</string>
+    <string name="Enter_your_name">Enter Your Name:</string>
+    <string name="UNIGE_Bank"></string>
+    <string name="unige_bank">UNIGE Bank</string>
+    <string name="or">OR</string>
+
+</resources>
