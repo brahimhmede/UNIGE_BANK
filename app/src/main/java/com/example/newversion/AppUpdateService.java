@@ -43,12 +43,10 @@ public class AppUpdateService extends Service {
     }
 
     private void performAppUpdate() {
-        // Implement the app update logic here
-        // You can use an update library or your own implementation to handle the app update process
 
-        // Stop the service once the update process is complete
         stopSelf();
     }
+
 
     @Nullable
     @Override

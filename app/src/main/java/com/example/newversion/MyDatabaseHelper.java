@@ -1,3 +1,6 @@
+package com.example.newversion;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,14 +15,35 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create your database tables using SQL statements or schema definition classes
-        // Example: db.execSQL("CREATE TABLE table_name (column_name1 data_type, column_name2 data_type);");
+        // Create the "Users" table
+        String createTableQuery = "CREATE TABLE Users (LastName TEXT, Name TEXT, IBAN TEXT);";
+        db.execSQL(createTableQuery);
+
+        // Insert the first row
+        ContentValues values1 = new ContentValues();
+        values1.put("LastName", "Hamade");
+        values1.put("Name", "Ibrahim");
+        values1.put("IBAN", "IT123");
+        db.insert("Users", null, values1);
+
+        // Insert the second row
+        ContentValues values2 = new ContentValues();
+        values2.put("LastName", "Kola");
+        values2.put("Name", "Era");
+        values2.put("IBAN", "IT321");
+        db.insert("Users", null, values2);
+
+        ContentValues values3 = new ContentValues();
+        values2.put("LastName", "Ayoub");
+        values2.put("Name", "Ali");
+        values2.put("IBAN", "IT33");
+        db.insert("Users", null, values3);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Handle database upgrades when the version number is increased
-        // Example: db.execSQL("DROP TABLE IF EXISTS table_name;");
+        // Example: db.execSQL("DROP TABLE IF EXISTS Users;");
         //          onCreate(db);
     }
 }

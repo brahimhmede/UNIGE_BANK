@@ -3,6 +3,7 @@ package com.example.newversion;
 import android.content.Intent;
 import android.os.Bundle;
 //import android.view.View;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AuthenticatedActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
+
     private String getEmailFromEditText() {
         EditText emailEditText = findViewById(R.id.idEdtUserName);
         return emailEditText.getText().toString().trim();
@@ -41,6 +43,12 @@ public class AuthenticatedActivity extends AppCompatActivity {
         String email = getEmailFromEditText();
         String password = getPasswordFromEditText();
 
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Continue with the authentication process
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -49,10 +57,9 @@ public class AuthenticatedActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        // User is not authenticated, display registration message
-                        Toast.makeText(AuthenticatedActivity.this, "Please register first", Toast.LENGTH_SHORT).show();
+                        // User is not authenticated, display error message
+                        Toast.makeText(AuthenticatedActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
-
 }

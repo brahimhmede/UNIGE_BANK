@@ -58,6 +58,7 @@
         app:srcCompat="@drawable/photo" />
 
     <!-- Add other views or elements within the ConstraintLayout as necessary -->
+
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
