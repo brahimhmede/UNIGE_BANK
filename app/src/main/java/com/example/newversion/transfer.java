@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +70,15 @@ public class transfer extends Fragment {
                         // Redirect to PaymentSuccess activity
                         Intent intent = new Intent(getActivity(), PaymentSuccess.class);
                         startActivity(intent);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Return to home screen after 3 seconds
+                                Intent homeIntent = new Intent(getActivity(), home.class);
+                                startActivity(homeIntent);
+                                getActivity().finish();
+                            }
+                        }, 3000);
                     } else {
                         // Show error message if data does not exist
                         Toast.makeText(getActivity(), "Input data not found", Toast.LENGTH_SHORT).show();
