@@ -34,9 +34,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.insert("Users", null, values2);
 
         ContentValues values3 = new ContentValues();
-        values2.put("LastName", "Ayoub");
-        values2.put("Name", "Ali");
-        values2.put("IBAN", "IT33");
+        values3.put("LastName", "Ayoub");
+        values3.put("Name", "Ali");
+        values3.put("IBAN", "IT33");
         db.insert("Users", null, values3);
     }
 
