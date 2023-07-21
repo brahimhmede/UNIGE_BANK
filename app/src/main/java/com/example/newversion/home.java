@@ -9,21 +9,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-
-
 public class home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ImageButton logoutButton = findViewById(R.id.logout);
+
+        logoutButton.setOnClickListener(v -> {
+            Intent intent = new Intent(home.this, RegistrationActivity.class);
+            startActivity(intent);
+        });
+
         ImageButton homeButton = findViewById(R.id.imageButton3);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(home.this, home.class);
             startActivity(intent);
         });
-
     }
+
     public void openNewFragment(View view) {
         // Replace 'YourCurrentFragment' with the fragment you want to replace
         transfer fragment = new transfer();
@@ -59,6 +65,4 @@ public class home extends AppCompatActivity {
         Intent serviceIntent = new Intent(this, AppUpdateService.class);
         startService(serviceIntent);
     }
-
-
 }
