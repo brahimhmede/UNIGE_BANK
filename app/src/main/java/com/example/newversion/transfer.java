@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,18 +67,28 @@ public class transfer extends Fragment {
                         // Perform the transfer
                         double amount = Double.parseDouble(amountString);
 
-                        // Redirect to PaymentSuccess activity
-                        Intent intent = new Intent(getActivity(), PaymentSuccess.class);
-                        startActivity(intent);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                // Return to home screen after 3 seconds
-                                Intent homeIntent = new Intent(getActivity(), home.class);
-                                startActivity(homeIntent);
-                                getActivity().finish();
+                        // Call the performMoneyTransfer method in the home activity to handle the money transfer
+                        home homeActivity = (home) getActivity();
+                        if (homeActivity != null) {
+                            if (homeActivity.checkAmountValid(amount)) {
+                                homeActivity.performMoneyTransfer(amount);
+
+                                homeActivity.setNewBalance(homeActivity.getBalance() - amount);
+
+                                // Redirect to PaymentSuccess activity
+                                Intent intent = new Intent(getActivity(), PaymentSuccess.class);
+                                startActivity(intent);
+                                new Handler().postDelayed(() -> {
+                                    // Return to home screen after 3 seconds
+                                    Intent homeIntent = new Intent(getActivity(), home.class);
+                                    startActivity(homeIntent);
+                                    getActivity().finish();
+                                }, 3000);
+                            } else {
+                                // Show an error message that the balance is insufficient.
+                                Toast.makeText(getActivity(), "Insufficient balance for the transfer", Toast.LENGTH_SHORT).show();
                             }
-                        }, 3000);
+                        }
                     } else {
                         // Show error message if data does not exist
                         Toast.makeText(getActivity(), "Input data not found", Toast.LENGTH_SHORT).show();
@@ -87,7 +96,6 @@ public class transfer extends Fragment {
                 }
             }
         });
-
 
         return view;
     }

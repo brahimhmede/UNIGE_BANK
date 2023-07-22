@@ -54,6 +54,7 @@ public class AuthenticatedActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         // User is authenticated, continue to the next activity
                         Intent intent = new Intent(AuthenticatedActivity.this, home.class);
+                        intent.putExtra("user_email", email); // Pass the email to the home activity
                         startActivity(intent);
                         finish();
                     } else {
