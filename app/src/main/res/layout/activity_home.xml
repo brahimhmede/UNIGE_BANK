@@ -30,7 +30,6 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <!-- Add any views that should be placed after the ImageButton within the LinearLayout if needed -->
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="0dp"
@@ -84,8 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logout" />
-
-    <!-- Add other views or elements within the ConstraintLayout as necessary -->
 
     <FrameLayout
         android:id="@+id/fragmentContainer"

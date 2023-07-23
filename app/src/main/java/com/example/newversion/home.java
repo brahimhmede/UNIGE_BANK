@@ -29,9 +29,7 @@ public class home extends AppCompatActivity {
         userEmail = getIntent().getStringExtra("user_email");
 
         if (userEmail == null || userEmail.isEmpty()) {
-            // Handle the case when the email is not available or the user is not authenticated
-            // You can redirect the user to the login/registration activity in this case
-            // For simplicity, I'll assume userEmail is "user@example.com"
+
             userEmail = "user@example.com";
         }
         // Retrieve the user-specific balance from SharedPreferences
@@ -66,7 +64,6 @@ public class home extends AppCompatActivity {
     public void performMoneyTransfer(double transferredAmount) {
         if (balance >= transferredAmount) {
             updateBalanceTextView();
-            // Perform the money transfer logic here.
         } else {
             // Show an error message that the balance is insufficient.
             Toast.makeText(this, "Insufficient balance for the transfer", Toast.LENGTH_SHORT).show();
@@ -123,8 +120,7 @@ public class home extends AppCompatActivity {
                 // Permission granted, start the service
                 startAppUpdateService();
             } else {
-                // Handle the case where the user denied the installation permission
-                // or the permission was not granted
+
             }
         }
     }

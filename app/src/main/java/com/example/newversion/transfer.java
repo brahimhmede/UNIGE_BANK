@@ -23,7 +23,6 @@ public class transfer extends Fragment {
     private String mParam2;
 
     public transfer() {
-        // Required empty public constructor
     }
 
     public static transfer newInstance(String param1, String param2) {

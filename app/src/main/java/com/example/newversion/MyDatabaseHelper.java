@@ -32,7 +32,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         values2.put("Name", "Era");
         values2.put("IBAN", "IT321");
         db.insert("Users", null, values2);
-
+        // Insert the 3rd row
         ContentValues values3 = new ContentValues();
         values3.put("LastName", "Ayoub");
         values3.put("Name", "Ali");
@@ -42,8 +42,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Handle database upgrades when the version number is increased
-        // Example: db.execSQL("DROP TABLE IF EXISTS Users;");
-        //          onCreate(db);
+
     }
 }

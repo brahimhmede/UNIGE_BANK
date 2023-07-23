@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".AuthenticatedActivity">
 
-    <!--text view for heading-->
-
-    <!--edit text for user name-->
     <TextView
         android:id="@+id/idTVHeader"
         android:layout_width="match_parent"

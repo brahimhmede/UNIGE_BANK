@@ -15,7 +15,6 @@ public class user {
         private String name;
 
         public User() {
-            // Empty constructor required for Firestore
         }
 
         public User(String email, String userId, String phoneNumber, String name) {

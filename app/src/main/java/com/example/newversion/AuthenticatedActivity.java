@@ -78,12 +78,12 @@ public class AuthenticatedActivity extends AppCompatActivity {
             passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT);
             // Change the eye icon to open eye
             ImageView eyeIcon = findViewById(R.id.imageView3);
-            eyeIcon.setImageResource(R.drawable.ic_eye_open); // Replace with your open eye icon
+            eyeIcon.setImageResource(R.drawable.ic_eye_open);
         } else {
             passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             // Change the eye icon to closed eye
             ImageView eyeIcon = findViewById(R.id.imageView3);
-            eyeIcon.setImageResource(R.drawable.ic_eye_closed); // Replace with your closed eye icon
+            eyeIcon.setImageResource(R.drawable.ic_eye_closed);
         }
     }
 }
