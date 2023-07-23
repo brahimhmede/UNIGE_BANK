@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
 }
-
+//that the app come from a trusted source//digital sign
 android {
     signingConfigs {
         debug {

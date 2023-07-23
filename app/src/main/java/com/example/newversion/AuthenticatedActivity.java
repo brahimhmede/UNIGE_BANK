@@ -1,19 +1,18 @@
+// AuthenticatedActivity.java
 package com.example.newversion;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.view.View;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-//import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AuthenticatedActivity extends AppCompatActivity {
@@ -37,6 +36,15 @@ public class AuthenticatedActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         Button loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(v -> loginUser());
+
+        // Initialize the eye icon and set click listener
+        ImageView eyeIcon = findViewById(R.id.imageView3);
+        final boolean[] isPasswordVisible = {false}; // Track the password visibility
+        eyeIcon.setOnClickListener(v -> {
+            // Toggle password visibility
+            isPasswordVisible[0] = !isPasswordVisible[0];
+            togglePasswordVisibility(isPasswordVisible[0]);
+        });
     }
 
     private void loginUser() {
@@ -62,5 +70,20 @@ public class AuthenticatedActivity extends AppCompatActivity {
                         Toast.makeText(AuthenticatedActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void togglePasswordVisibility(boolean isVisible) {
+        EditText passwordEditText = findViewById(R.id.idEdtPassword);
+        if (isVisible) {
+            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+            // Change the eye icon to open eye
+            ImageView eyeIcon = findViewById(R.id.imageView3);
+            eyeIcon.setImageResource(R.drawable.ic_eye_open); // Replace with your open eye icon
+        } else {
+            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            // Change the eye icon to closed eye
+            ImageView eyeIcon = findViewById(R.id.imageView3);
+            eyeIcon.setImageResource(R.drawable.ic_eye_closed); // Replace with your closed eye icon
+        }
     }
 }

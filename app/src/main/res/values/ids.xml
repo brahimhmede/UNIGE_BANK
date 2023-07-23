@@ -2,4 +2,5 @@
 <resources>
     <item name="fragmentContainer" type="id" />
     <item name="back" type="id" />
+    <item name="smallGuyTooltipView" type="id" />
 </resources>

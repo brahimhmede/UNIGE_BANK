@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,8 +45,9 @@
         android:autofillHints=""
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textColorHint="#8D6E63" />
+        android:minHeight="48dp" />
+
+
 
     <!--button to register our new user-->
     <Button
@@ -58,5 +60,14 @@
         android:layout_marginEnd="10dp"
         android:text="@string/login"
         android:textAllCaps="false" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="72dp"
+        android:layout_alignBottom="@id/idEdtPassword"
+        android:layout_alignEnd="@id/idEdtPassword"
+        android:layout_marginEnd="8dp"
+        app:srcCompat="@drawable/ic_eye_closed" />
 
 </RelativeLayout>
