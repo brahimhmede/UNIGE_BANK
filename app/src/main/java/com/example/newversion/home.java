@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.util.Locale; // Import the Locale class
+import java.util.Locale;
 
 public class home extends AppCompatActivity {
 
@@ -29,7 +29,6 @@ public class home extends AppCompatActivity {
         userEmail = getIntent().getStringExtra("user_email");
 
         if (userEmail == null || userEmail.isEmpty()) {
-
             userEmail = "user@example.com";
         }
         // Retrieve the user-specific balance from SharedPreferences
@@ -49,7 +48,6 @@ public class home extends AppCompatActivity {
             Intent intent = new Intent(home.this, home.class);
             startActivity(intent);
         });
-
     }
 
     public void openNewFragment(View view) {
@@ -129,5 +127,4 @@ public class home extends AppCompatActivity {
         Intent serviceIntent = new Intent(this, AppUpdateService.class);
         startService(serviceIntent);
     }
-
 }
