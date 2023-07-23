@@ -5,8 +5,5 @@ Ayoub Ali 5018444
 
 Kola Era 4911579
 
- This Project is a simple Bank APP that contain a registration connected with a FirebaseAUTH account to manage it and save DATA 
- Then a Login activity or (Autentication activity ) to take UserDATA to open the home page that contain two button one to refresh or open home screen 
- And the other is a Fragment that's called Transfer with specific data connected with our DATABASE using SQLite the a redirecting activity
- after successfuly transfer and finlly a balance for every account that can be reduced after every transfer ad saved !.
- and a logout button ! 
+This Project is a simple Bank APP that contains a registration connected with a FirebaseAUTH account to manage it and save the DATA . Then a Login activity or (Autentication activity ) to take UserDATA to open the home page that contains two buttons : one to refresh or open home screen , and the other one is a Fragment that's called ‘Transfer’ with a specific data ,connected with our DATABASE using SQLite , then a redirecting activity after a successful transfer , and finally  a balance for every account that can be reduced after every transfer and saved ! 
+To conclude there is also a logout button ! :)
