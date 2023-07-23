@@ -1,7 +1,7 @@
 # unige_bank
-*Hamade Ibrahim 5012251*
-*Ayoub Ali 5018444* 
-*Kola Era 4911579* 
+Hamade Ibrahim 5012251
+Ayoub Ali 5018444
+Kola Era 4911579
 
  This Project is a simple Bank APP that contain a registration connected with a FirebaseAUTH account to manage it and save DATA 
  Then a Login activity or (Autentication activity ) to take UserDATA to open the home page that contain two button one to refresh or open home screen 
