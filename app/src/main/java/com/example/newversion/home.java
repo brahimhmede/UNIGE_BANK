@@ -39,7 +39,12 @@ public class home extends AppCompatActivity {
 
         ImageButton logoutButton = findViewById(R.id.logout);
         logoutButton.setOnClickListener(v -> {
+            // Save the current balance before logging out
+            saveBalance();
+
+            // Finish the current activity to log out without clearing data
             finish();
+
             Intent intent = new Intent(home.this, RegistrationActivity.class);
             startActivity(intent);
         });
@@ -62,7 +67,8 @@ public class home extends AppCompatActivity {
 
     public void performMoneyTransfer(double transferredAmount) {
         if (balance >= transferredAmount) {
-            updateBalanceTextView();
+
+            Toast.makeText(this, "Transfer successful!", Toast.LENGTH_SHORT).show();
         } else {
             // Show an error message that the balance is insufficient.
             Toast.makeText(this, "Insufficient balance for the transfer", Toast.LENGTH_SHORT).show();
@@ -93,15 +99,23 @@ public class home extends AppCompatActivity {
     private void saveBalance() {
         // Save the user-specific balance to SharedPreferences
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+
+        // Use the user's email as part of the key to store their specific balance
+        String userBalanceKey = userEmail + "_" + BALANCE_KEY;
+
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putFloat(BALANCE_KEY, (float) balance);
+        editor.putFloat(userBalanceKey, (float) balance);
         editor.apply();
     }
 
     private void retrieveBalance() {
         // Retrieve the user-specific balance from SharedPreferences
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        balance = preferences.getFloat(BALANCE_KEY, 5000.0f); // Use the initial balance as the default value
+
+        // Use the user's email as part of the key to retrieve their specific balance
+        String userBalanceKey = userEmail + "_" + BALANCE_KEY;
+
+        balance = preferences.getFloat(userBalanceKey, 5000.0f); // Use the initial balance as the default value
     }
 
     private static final int REQUEST_CODE_INSTALL_PERMISSION = 1001;
