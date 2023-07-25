@@ -39,6 +39,7 @@ public class home extends AppCompatActivity {
 
         ImageButton logoutButton = findViewById(R.id.logout);
         logoutButton.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(home.this, RegistrationActivity.class);
             startActivity(intent);
         });
