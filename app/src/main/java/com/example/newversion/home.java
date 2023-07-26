@@ -115,7 +115,7 @@ public class home extends AppCompatActivity {
         // Use the user's email as part of the key to retrieve their specific balance
         String userBalanceKey = userEmail + "_" + BALANCE_KEY;
 
-        balance = preferences.getFloat(userBalanceKey, 5000.0f); // Use the initial balance as the default value
+        balance = preferences.getFloat(userBalanceKey, 5000.0f);
     }
 
     private static final int REQUEST_CODE_INSTALL_PERMISSION = 1001;
