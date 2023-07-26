@@ -1,4 +1,4 @@
-// AuthenticatedActivity.java
+// loGin activity
 package com.example.newversion;
 
 import android.content.Intent;
@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class AuthenticatedActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
+    //richiamiamo i dati "email e password"
     private String getEmailFromEditText() {
         EditText emailEditText = findViewById(R.id.idEdtUserName);
         return emailEditText.getText().toString().trim();

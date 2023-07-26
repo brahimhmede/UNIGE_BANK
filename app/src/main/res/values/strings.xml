@@ -26,7 +26,7 @@
     <string name="title_activity_payment_success">PaymentSuccess</string>
     <string name="payment_success">Payment Success</string>
     <string name="Enter_your_name">Enter Your Name:</string>
-    <string name="UNIGE_Bank"></string>
+    <string name="UNIGE_Bank"> </string>
     <string name="unige_bank">UNIGE Bank</string>
     <string name="or">OR</string>
     <string name="transfer">Transfer</string>
